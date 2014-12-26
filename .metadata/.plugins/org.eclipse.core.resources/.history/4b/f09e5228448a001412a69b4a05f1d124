@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 上面這行表示這是一個XML文件，一定要在第一行 -->
+<!--
+    最外層一定是一個manifest的標籤
+    xmlns:android="..."：這個設定一定要有，而且固定不變 。
+    package="應用程式主套件"：在建立應用程式的時候輸入的主套件名稱，儘可能不要修改它，如果真的要修改的話，在原始程式碼src目錄下的套件也要一起修改；存檔後，ADT會自動幫你修改gen目錄下的套件名稱。
+    android:versionCode="數字"：自己編製的版本流水號，例如1,2,3…。
+    android:versionName="版本名稱"：自己命名的版本名稱，例如1.1或2.0。
+    android:installLocation="安裝位置"：設定應用程式安裝的位置，可以設定為「auto」、「internalOnly」或「preferExternal」，依序為由系統自動決定、只安裝在內建儲存位置和以外部儲存設備（記憶卡）為優先。
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.macdidi.myandroidtutorial"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!--
+    應用程式版本資訊
+    android:minSdkVersion="API level"：最低版本，如果使用者的裝置版本低於這個設定的話，就不能安裝這個應用程式。
+    android:maxSdkVersion="API level"：最高版本，通常不需要設定。
+    android:targetSdkVersion="API level"：運作的主要版本。
+    -->
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 應用程式包含的Activity元件 -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+
+                <!-- res/menu/main.xml -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+    </application>
+    <!-- manifest的結束標籤，表示它的範圍 -->
+
+</manifest>

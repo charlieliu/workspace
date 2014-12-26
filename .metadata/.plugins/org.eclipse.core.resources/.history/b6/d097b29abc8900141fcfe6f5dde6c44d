@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- strings.xml – 文字資源 -->
+<resources>
+
+    <string name="app_name">MyAndroidTutorial</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="title">Title</string>
+    <string name="enter_title">Enter title</string>
+    <string name="content">Content</string>
+    <string name="enter_content">Enter content</string>
+
+    <string name="about">about</string>
+    <string name="show_app_name">show app name</string>
+
+</resources>

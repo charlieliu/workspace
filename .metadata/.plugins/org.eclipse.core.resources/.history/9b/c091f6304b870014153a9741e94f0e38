@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- strings.xml – 文字資源 -->
+<resources>
+
+    <string name="app_name">標題</string>
+    <string name="title_section1">選項 1</string>
+    <string name="title_section2">選項 2</string>
+    <string name="title_section3">選項 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">右上</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
