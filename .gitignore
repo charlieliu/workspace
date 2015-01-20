@@ -73,3 +73,7 @@ $RECYCLE.BIN/
 *.lnk
 
 .metadata
+.metadata/.plugins/org.eclipse.core.resources/.projects/MyAndroidTutorial/.indexes/a0/d6/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/MyAndroidTutorial/.indexes/a0/d6/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/MyAndroidTutorial/.indexes/properties.index
+.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
