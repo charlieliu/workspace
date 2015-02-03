@@ -91,11 +91,13 @@ public class MainActivity extends Activity {
     	if (resultCode == Activity.RESULT_OK) {
     		// 讀取標題
     		String titleText = data.getStringExtra("titleText");
+    		String contentText = data.getStringExtra("contentText");
  
             // 如果是新增記事
             if (requestCode == 0) {
                 // 加入標題項目
                 this.data.add(titleText);
+                this.content.add(contentText);
                 // 通知資料已經改變，ListView元件才會重新顯示
                 adapter.notifyDataSetChanged();
             }
@@ -107,6 +109,7 @@ public class MainActivity extends Activity {
                 if (position != -1) {
                     // 設定標題項目
                     this.data.set(position, titleText);
+                    this.content.set(position, contentText);
                     // 通知資料已經改變，ListView元件才會重新顯示
                     adapter.notifyDataSetChanged();
                 }
