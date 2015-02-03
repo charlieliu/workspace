@@ -33,6 +33,8 @@ public class ItemActivity extends Activity {
             // 接收與設定記事標題
             String titleText = intent.getStringExtra("titleText");
             title_text.setText(titleText);
+            String contentText = intent.getStringExtra("contentText");
+            content_text.setText(contentText);
         }
         
         //Toast.makeText(this, "ItemActivity onCreate end", Toast.LENGTH_LONG).show();

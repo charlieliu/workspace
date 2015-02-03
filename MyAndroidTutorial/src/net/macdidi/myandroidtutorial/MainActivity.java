@@ -1,6 +1,13 @@
 ﻿package net.macdidi.myandroidtutorial;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import android.os.BaseBundle;
+
+//import android.content.ClipData.Item;
+
 import android.content.Intent;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,6 +34,11 @@ public class MainActivity extends Activity {
     // 換掉原來的字串陣列
     private ArrayList data = new ArrayList();
     private ArrayAdapter adapter;
+    
+    private ArrayList content = new ArrayList();
+    
+    // 儲存所有記事本的List物件
+    private List<Item> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +57,32 @@ public class MainActivity extends Activity {
         data.add("天仁茗茶");
         data.add("Starbucks");
         data.add("Smith&Hsu tea");
+        
+        content.add("麵包");
+        content.add("茶");
+        content.add("咖啡");
+        content.add("司康");
+        
+        /*
+        //items = new ArrayList<Item>();
+        items.add(new Item(1, new Date().getTime(), Colors.GREEN, "吳寶春", "麵包", "", 0, 0, 0));
+        items.add(new Item(2, new Date().getTime(), Colors.GREEN, "天仁茗茶", "茶", "", 0, 0, 0));
+        items.add(new Item(3, new Date().getTime(), Colors.GREEN, "Starbucks", "咖啡", "", 0, 0, 0));
+        items.add(new Item(4, new Date().getTime(), Colors.GREEN, "Smith&Hsu tea", "司康", "", 0, 0, 0));
+        */
+        
+        
 
         int layoutId = android.R.layout.simple_list_item_1;
         adapter = new ArrayAdapter(this, layoutId, data);
+        //adapter = new ArrayAdapter(this, layoutId, items);
         item_list.setAdapter(adapter);
+        
+        //itemAdapter = new ItemAdapter(this, R.layout.single_item, items);
+        //item_list.setAdapter(itemAdapter);
 
         //Toast.makeText(this, "MainActivity onCreate end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "items : "+items, Toast.LENGTH_LONG).show();
     }
     
     @Override
@@ -105,7 +137,11 @@ public class MainActivity extends Activity {
                 // 設定記事編號與標題
                 intent.putExtra("position", position);
                 intent.putExtra("titleText", (String) data.get(position));
- 
+                //Toast.makeText(MainActivity.this, "position: " + position, Toast.LENGTH_LONG).show();
+
+                intent.putExtra("contentText", (String) content.get(position));
+                //Toast.makeText(MainActivity.this, "contentText: " + (String) content.get(position), Toast.LENGTH_LONG).show();
+                
                 // 呼叫「startActivityForResult」，第二個參數「1」表示執行修改
                 startActivityForResult(intent, 1);
             }
@@ -128,6 +164,7 @@ public class MainActivity extends Activity {
                 //Toast.makeText(MainActivity.this, "Long: " + data[position], Toast.LENGTH_LONG).show();
                 // 換掉「data[position]」
                 Toast.makeText(MainActivity.this, "Long: " + data.get(position), Toast.LENGTH_LONG).show();
+                
                 return false;
             }
         };
