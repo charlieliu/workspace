@@ -60,6 +60,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <activity
+		    android:name="net.macdidi.myandroidtutorial.ColorActivity"
+		    android:theme="@android:style/Theme.Dialog"
+		    android:label="@string/title_activity_color" />
     </application>
 
 <!-- manifest的結束標籤，表示它的範圍 -->
