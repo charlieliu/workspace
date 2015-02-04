@@ -10,7 +10,7 @@ public class AboutActivity extends Activity {
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    	//Toast.makeText(this, "AboutActivity onCreate start", Toast.LENGTH_LONG).show();
+    	Toast.makeText(this, "AboutActivity onCreate start", Toast.LENGTH_LONG).show();
     	
     	// 一定要加入呼叫父類別onCreate方法的敘述
     	super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class AboutActivity extends Activity {
         // 指定這個元件使用的畫面配置資源
         setContentView(R.layout.activity_about);
         
-        //Toast.makeText(this, "AboutActivity onCreate end", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "AboutActivity onCreate end", Toast.LENGTH_LONG).show();
     }
  
     // 結束按鈕
@@ -35,8 +35,6 @@ public class AboutActivity extends Activity {
         super.onStart();
         Toast.makeText(this, "AboutActivity onStart end", Toast.LENGTH_LONG).show();
     }
-
-
     @Override
     protected void onResume() {
         //Toast.makeText(MainActivity.this, "MainActivity onResume start", Toast.LENGTH_SHORT).show();
@@ -44,8 +42,6 @@ public class AboutActivity extends Activity {
         super.onResume();
         Toast.makeText(this, "AboutActivity onResume end", Toast.LENGTH_LONG).show();
     }
-
-
     @Override
     protected void onPause() {
         //Toast.makeText(MainActivity.this, "MainActivity onPause start", Toast.LENGTH_SHORT).show();
@@ -53,7 +49,6 @@ public class AboutActivity extends Activity {
         super.onPause();
         Toast.makeText(this, "AboutActivity onPause end", Toast.LENGTH_LONG).show();
     }
-
     @Override
     protected void onStop() {
         //Toast.makeText(MainActivity.this, "MainActivity onStop start", Toast.LENGTH_SHORT).show();
@@ -61,7 +56,6 @@ public class AboutActivity extends Activity {
         super.onStop();
         Toast.makeText(this, "AboutActivity onStop end", Toast.LENGTH_LONG).show();
     }
-
     @Override
     protected void onDestroy() {
         //Toast.makeText(MainActivity.this, "MainActivity onDestroy start", Toast.LENGTH_SHORT).show();
@@ -69,8 +63,6 @@ public class AboutActivity extends Activity {
         super.onDestroy();
         Toast.makeText(this, "AboutActivity onDestroy end", Toast.LENGTH_LONG).show();
     }
-
-
     @Override
     protected void onRestart() {
         //Toast.makeText(MainActivity.this, "MainActivity onRestart start", Toast.LENGTH_SHORT).show();

@@ -3,16 +3,16 @@ package net.macdidi.myandroidtutorial;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
+//import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+//import android.widget.RelativeLayout;
 import android.widget.TextView;
-/*
+
 public class ItemAdapter extends ArrayAdapter<Item> {
 
 	// 畫面資源編號
@@ -45,21 +45,21 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         }
 
         // 讀取記事顏色、已選擇、標題與日期時間元件
-        RelativeLayout typeColor = (RelativeLayout) itemView.findViewById(R.id.type_color);
-        ImageView selectedItem = (ImageView) itemView.findViewById(R.id.selected_item);
+        //RelativeLayout typeColor = (RelativeLayout) itemView.findViewById(R.id.type_color);
+        //ImageView selectedItem = (ImageView) itemView.findViewById(R.id.selected_item);
         TextView titleView = (TextView) itemView.findViewById(R.id.title_text);
-        TextView dateView = (TextView) itemView.findViewById(R.id.date_text);
+        //TextView dateView = (TextView) itemView.findViewById(R.id.date_text);
 
         // 設定記事顏色
-        GradientDrawable background = (GradientDrawable)typeColor.getBackground();
-        background.setColor(item.getColor().parseColor());
+        //GradientDrawable background = (GradientDrawable)typeColor.getBackground();
+        //background.setColor(item.getColor().parseColor());
 
         // 設定標題與日期時間
         titleView.setText(item.getTitle());
-        dateView.setText(item.getLocaleDatetime());
+        //dateView.setText(item.getLocaleDatetime());
 
         // 設定是否已選擇
-        selectedItem.setVisibility(item.isSelected() ? View.VISIBLE : View.INVISIBLE);
+        //selectedItem.setVisibility(item.isSelected() ? View.VISIBLE : View.INVISIBLE);
 
         return itemView;
     }
@@ -78,4 +78,3 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     }
 
 }
-*/

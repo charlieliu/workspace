@@ -1,10 +1,10 @@
 ﻿package net.macdidi.myandroidtutorial;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+//import java.util.Date;
+//import java.util.List;
 
-import android.os.BaseBundle;
+//import android.os.BaseBundle;
 
 //import android.content.ClipData.Item;
 
@@ -32,13 +32,13 @@ public class MainActivity extends Activity {
     private TextView show_app_name;
 
     // 換掉原來的字串陣列
-    private ArrayList data = new ArrayList();
-    private ArrayAdapter adapter;
+    private ArrayList<String> data = new ArrayList<String>();
+    private ArrayAdapter<String> adapter;
     
-    private ArrayList content = new ArrayList();
+    private ArrayList<String> content = new ArrayList<String>();
     
     // 儲存所有記事本的List物件
-    private List<Item> items;
+    //private List<Item> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,27 +62,25 @@ public class MainActivity extends Activity {
         content.add("茶");
         content.add("咖啡");
         content.add("司康");
-        
-        /*
-        //items = new ArrayList<Item>();
+/* 
+        items = new ArrayList<Item>();
         items.add(new Item(1, new Date().getTime(), Colors.GREEN, "吳寶春", "麵包", "", 0, 0, 0));
         items.add(new Item(2, new Date().getTime(), Colors.GREEN, "天仁茗茶", "茶", "", 0, 0, 0));
         items.add(new Item(3, new Date().getTime(), Colors.GREEN, "Starbucks", "咖啡", "", 0, 0, 0));
         items.add(new Item(4, new Date().getTime(), Colors.GREEN, "Smith&Hsu tea", "司康", "", 0, 0, 0));
-        */
-        
+*/
         
 
         int layoutId = android.R.layout.simple_list_item_1;
-        adapter = new ArrayAdapter(this, layoutId, data);
+        adapter = new ArrayAdapter<String>(this, layoutId, data);
         //adapter = new ArrayAdapter(this, layoutId, items);
         item_list.setAdapter(adapter);
         
         //itemAdapter = new ItemAdapter(this, R.layout.single_item, items);
         //item_list.setAdapter(itemAdapter);
+        //Toast.makeText(this, "items : "+items, Toast.LENGTH_LONG).show();
 
         //Toast.makeText(this, "MainActivity onCreate end", Toast.LENGTH_LONG).show();
-        //Toast.makeText(this, "items : "+items, Toast.LENGTH_LONG).show();
     }
     
     @Override
@@ -98,6 +96,7 @@ public class MainActivity extends Activity {
                 // 加入標題項目
                 this.data.add(titleText);
                 this.content.add(contentText);
+
                 // 通知資料已經改變，ListView元件才會重新顯示
                 adapter.notifyDataSetChanged();
             }
@@ -110,6 +109,7 @@ public class MainActivity extends Activity {
                     // 設定標題項目
                     this.data.set(position, titleText);
                     this.content.set(position, contentText);
+
                     // 通知資料已經改變，ListView元件才會重新顯示
                     adapter.notifyDataSetChanged();
                 }
@@ -134,17 +134,18 @@ public class MainActivity extends Activity {
             // 第四個參數在這裡沒有用途
         	@Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 // 使用Action名稱建立啟動另一個Activity元件需要的Intent物件
                 Intent intent = new Intent("net.macdidi.myandroidtutorial.EDIT_ITEM");
- 
+
                 // 設定記事編號與標題
                 intent.putExtra("position", position);
                 intent.putExtra("titleText", (String) data.get(position));
-                //Toast.makeText(MainActivity.this, "position: " + position, Toast.LENGTH_LONG).show();
-
                 intent.putExtra("contentText", (String) content.get(position));
-                //Toast.makeText(MainActivity.this, "contentText: " + (String) content.get(position), Toast.LENGTH_LONG).show();
                 
+                Toast.makeText(MainActivity.this, "position: " + position, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "contentText: " + (String) content.get(position), Toast.LENGTH_LONG).show();
+           
                 // 呼叫「startActivityForResult」，第二個參數「1」表示執行修改
                 startActivityForResult(intent, 1);
             }
@@ -202,13 +203,13 @@ public class MainActivity extends Activity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu, menu);
 
-        //Toast.makeText(this, "MainActivity onCreateOptionsMenu end", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "MainActivity onCreateOptionsMenu end", Toast.LENGTH_LONG).show();
         return true;
     }
 
     public void clickMenuItem(MenuItem item) {
         int itemId = item.getItemId();
-        Toast.makeText(this, "MainActivity clickMenuItem ("+itemId+")", Toast.LENGTH_LONG).show();
+        //oast.makeText(this, "MainActivity clickMenuItem ("+itemId+")", Toast.LENGTH_LONG).show();
  /*
         switch (itemId) {
 	        case R.id.search_item:
@@ -233,21 +234,23 @@ public class MainActivity extends Activity {
 
     // 點擊應用程式名稱元件後呼叫的方法
     public void aboutApp(View view) {
+    	//Toast.makeText(MainActivity.this, "MainActivity aboutApp start", Toast.LENGTH_LONG).show();
         // 建立啟動另一個Activity元件需要的Intent物件
         // 建構式的第一個參數：「this」
         // 建構式的第二個參數：「Activity元件類別名稱.class」
-        Intent intent = new Intent(this, AboutActivity.class);
+        Intent intent = new Intent(this, net.macdidi.myandroidtutorial.AboutActivity.class);
         // 呼叫「startActivity」，參數為一個建立好的Intent物件
         // 這行敘述執行以後，如果沒有任何錯誤，就會啟動指定的元件
         startActivity(intent);
+        //Toast.makeText(MainActivity.this, "MainActivity aboutApp end", Toast.LENGTH_LONG).show();
     }
-/*
+
     @Override
     protected void onStart() {
         //Toast.makeText(MainActivity.this, "MainActivity onStart start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onStart();
-        Toast.makeText(MainActivity.this, "MainActivity onStart end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onStart end", Toast.LENGTH_LONG).show();
     }
 
 
@@ -256,7 +259,7 @@ public class MainActivity extends Activity {
         //Toast.makeText(MainActivity.this, "MainActivity onResume start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onResume();
-        Toast.makeText(MainActivity.this, "MainActivity onResume end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onResume end", Toast.LENGTH_LONG).show();
     }
 
 
@@ -265,7 +268,7 @@ public class MainActivity extends Activity {
         //Toast.makeText(MainActivity.this, "MainActivity onPause start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onPause();
-        Toast.makeText(MainActivity.this, "MainActivity onPause end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onPause end", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -273,7 +276,7 @@ public class MainActivity extends Activity {
         //Toast.makeText(MainActivity.this, "MainActivity onStop start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onStop();
-        Toast.makeText(MainActivity.this, "MainActivity onStop end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onStop end", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -281,7 +284,7 @@ public class MainActivity extends Activity {
         //Toast.makeText(MainActivity.this, "MainActivity onDestroy start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onDestroy();
-        Toast.makeText(MainActivity.this, "MainActivity onDestroy end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onDestroy end", Toast.LENGTH_LONG).show();
     }
 
 
@@ -290,7 +293,7 @@ public class MainActivity extends Activity {
         //Toast.makeText(MainActivity.this, "MainActivity onRestart start", Toast.LENGTH_SHORT).show();
         // TODO Auto-generated method stub
         super.onRestart();
-        Toast.makeText(MainActivity.this, "MainActivity onRestart end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "MainActivity onRestart end", Toast.LENGTH_LONG).show();
     }
-*/
+
 }

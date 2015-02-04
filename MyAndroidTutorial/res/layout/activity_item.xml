@@ -78,15 +78,15 @@
                 android:text="@android:string/cancel"
                 android:onClick="onSubmit"
                 android:padding="6sp"
-            android:layout_margin="2sp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+	            android:layout_margin="2sp"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
             <Button
                 android:id="@+id/ok_teim"
                 android:text="@android:string/ok"
                 android:onClick="onSubmit"
                 android:padding="6sp"
-            android:layout_margin="2sp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+	            android:layout_margin="2sp"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
     </TableLayout>
  
