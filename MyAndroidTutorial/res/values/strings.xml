@@ -20,8 +20,8 @@
     <string name="revert_item">revert_item</string>
     <string name="delete_item">delete_item</string>
     <string name="share_item">share_item</string>
-    <string name="googleplus_item">googleplus_item</string>
-    <string name="facebook_item">facebook_item</string>
+    <string name="googleplus_item">Google+</string>
+    <string name="facebook_item">Facebook</string>
     
     <string name="version">版本</string>
     

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
- <!-- 
+
     <item
         android:id="@+id/search_item"
-        android:showAsAction="always"
+        android:title="@string/search_item"
         android:icon="@android:drawable/ic_menu_search"/>        
  
     <item
         android:id="@+id/add_item"
-        android:showAsAction="always"
+        android:title="@string/add_item"
         android:icon="@android:drawable/ic_menu_add"/>    
  
     <item
         android:id="@+id/revert_item"
-        android:showAsAction="always"
+        android:title="@string/revert_item"
         android:icon="@android:drawable/ic_menu_revert" />         
  
     <item
         android:id="@+id/delete_item"
-        android:showAsAction="always"
+        android:title="@string/delete_item"
         android:icon="@android:drawable/ic_menu_delete" />
  
     <item
         android:id="@+id/share_item"
-        android:showAsAction="always"
+        android:title="@string/share_item"
         android:icon="@android:drawable/ic_menu_share" >
  
         <menu>
             <item 
                 android:id="@+id/googleplus_item"
-                android:title="Google+" />
+                android:title="@string/googleplus_item" />
             <item
                 android:id="@+id/facebook_item"
-                android:title="Facebook" />
+                android:title="@string/facebook_item" />
         </menu>
     </item> 
-  -->
+
 </menu>

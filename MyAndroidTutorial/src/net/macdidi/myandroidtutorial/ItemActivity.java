@@ -87,6 +87,11 @@ public class ItemActivity extends Activity {
         }
 */
     }
+    
+    public static Colors getColors(int int1) {
+    	// TODO Auto-generated method stub
+    	return null;
+    }
  /*
     @Override
     protected void onStart() {

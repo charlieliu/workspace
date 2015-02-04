@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public class Item implements java.io.Serializable {
 
-	// ç·¨è™Ÿã€æ—¥æœŸæ™‚é–“ã€é¡è‰²ã€æ¨™é¡Œã€å…§å®¹ã€æª”æ¡ˆåç¨±ã€ç¶“ç·¯åº¦ã€ä¿®æ”¹ã€å·²é¸æ“‡
+	// ½s¸¹¡B¤é´Á®É¶¡¡BÃC¦â¡B¼ĞÃD¡B¤º®e¡BÀÉ®×¦WºÙ¡B¸g½n«×¡B­×§ï¡B¤w¿ï¾Ü
     private long id;
     private long datetime;
     private Colors color;
@@ -48,17 +48,17 @@ public class Item implements java.io.Serializable {
         return datetime;
     }
 
-    // è£ç½®å€åŸŸçš„æ—¥æœŸæ™‚é–“
+    // ¸Ë¸m°Ï°ìªº¤é´Á®É¶¡
     public String getLocaleDatetime() {
         return String.format(Locale.getDefault(), "%tF  %<tR", new Date(datetime));
     }
 
-    // è£ç½®å€åŸŸçš„æ—¥æœŸ
+    // ¸Ë¸m°Ï°ìªº¤é´Á
     public String getLocaleDate() {
         return String.format(Locale.getDefault(), "%tF", new Date(datetime));
     }
 
-    // è£ç½®å€åŸŸçš„æ™‚é–“
+    // ¸Ë¸m°Ï°ìªº®É¶¡
     public String getLocaleTime() {
         return String.format(Locale.getDefault(), "%tR", new Date(datetime));
     }
