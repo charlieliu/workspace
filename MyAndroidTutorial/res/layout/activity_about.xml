@@ -11,7 +11,7 @@
         android:gravity="center"
         android:layout_margin="@dimen/default_margin"
         android:padding="@dimen/default_padding"
-        android:text="@string/about"
+        android:text="@string/app_name"
         android:textColor="@color/dark_text" />
 
     <TextView
@@ -21,6 +21,14 @@
         android:layout_margin="@dimen/default_margin"
         android:padding="@dimen/default_padding"
         android:text="@string/version"
+        android:textColor="@color/dark_text" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="@dimen/default_margin"
+        android:padding="@dimen/default_padding"
+        android:text="2015.02.05"
         android:textColor="@color/dark_text" />
 
     <Button

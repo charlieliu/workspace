@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 //import java.util.Date;
-import java.util.List;
+//import java.util.List;
 
 //import android.os.BaseBundle;
 
@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
     private ArrayList<String> content = new ArrayList<String>();
     
     // 儲存所有記事本的List物件
-    private List<Item> items;
-    private ItemDAO itemDAO;
+    //private List<Item> items;
+    //private ItemDAO itemDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 
         processViews();
         processControllers();
- /*
+
         // 加入範例資料
         data.add("吳寶春");
         data.add("天仁茗茶");
@@ -63,34 +63,34 @@ public class MainActivity extends Activity {
         content.add("茶");
         content.add("咖啡");
         content.add("司康");
-
+/*
         items = new ArrayList<Item>();
         items.add(new Item(1, new Date().getTime(), Colors.GREEN, "吳寶春", "麵包", "", 0, 0, 0));
         items.add(new Item(2, new Date().getTime(), Colors.GREEN, "天仁茗茶", "茶", "", 0, 0, 0));
         items.add(new Item(3, new Date().getTime(), Colors.GREEN, "Starbucks", "咖啡", "", 0, 0, 0));
         items.add(new Item(4, new Date().getTime(), Colors.GREEN, "Smith&Hsu tea", "司康", "", 0, 0, 0));
-        
+*/
 
         int layoutId = android.R.layout.simple_list_item_1;
         adapter = new ArrayAdapter<String>(this, layoutId, data);
         //adapter = new ArrayAdapter(this, layoutId, items);
         item_list.setAdapter(adapter);
-*/    
+/*
         // 建立資料庫物件
         itemDAO = new ItemDAO(getApplicationContext());
-     
+
         // 如果資料庫是空的，就建立一些範例資料
         // 這是為了方便測試用的，完成應用程式以後可以拿掉
         if (itemDAO.getCount() == 0) {
             itemDAO.sample();
         }
-     
+
         // 取得所有記事資料
         items = itemDAO.getAll();
-     
+
         ItemAdapter itemAdapter = new ItemAdapter(this, R.layout.single_item, items);
         item_list.setAdapter(itemAdapter);
-
+*/
         //Toast.makeText(this, "MainActivity onCreate end", Toast.LENGTH_LONG).show();
     }
     
@@ -154,8 +154,8 @@ public class MainActivity extends Activity {
                 intent.putExtra("titleText", (String) data.get(position));
                 intent.putExtra("contentText", (String) content.get(position));
                 
-                Toast.makeText(MainActivity.this, "position: " + position, Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "contentText: " + (String) content.get(position), Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "position: " + position, Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "contentText: " + (String) content.get(position), Toast.LENGTH_LONG).show();
            
                 // 呼叫「startActivityForResult」，第二個參數「1」表示執行修改
                 startActivityForResult(intent, 1);
@@ -192,11 +192,8 @@ public class MainActivity extends Activity {
 
             @Override
             public boolean onLongClick(View view) {
-                AlertDialog.Builder dialog = 
-                        new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle(R.string.app_name)
-                      .setMessage(R.string.about)
-                      .show();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle(R.string.app_name).setMessage(R.string.about).show();
                 return false;
             }
 
@@ -220,7 +217,7 @@ public class MainActivity extends Activity {
 
     public void clickMenuItem(MenuItem item) {
         int itemId = item.getItemId();
-        //oast.makeText(this, "MainActivity clickMenuItem ("+itemId+")", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "MainActivity clickMenuItem ("+itemId+")", Toast.LENGTH_LONG).show();
 
         switch (itemId) {
 	        case R.id.search_item:

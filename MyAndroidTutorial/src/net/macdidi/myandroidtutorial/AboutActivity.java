@@ -10,7 +10,7 @@ public class AboutActivity extends Activity {
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    	Toast.makeText(this, "AboutActivity onCreate start", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "AboutActivity onCreate start", Toast.LENGTH_LONG).show();
     	
     	// 一定要加入呼叫父類別onCreate方法的敘述
     	super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class AboutActivity extends Activity {
         // 指定這個元件使用的畫面配置資源
         setContentView(R.layout.activity_about);
         
-        Toast.makeText(this, "AboutActivity onCreate end", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "AboutActivity onCreate end", Toast.LENGTH_LONG).show();
     }
  
     // 結束按鈕
